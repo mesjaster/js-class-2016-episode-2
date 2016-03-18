@@ -29,8 +29,13 @@ prompt.get([{
 
   console.log(`Welcome, ${result.name} !`);
 
-  tryAgain(function() {});
+  tryAgain(retry);
 });
+
+
+function retry(err, bool) {
+    if (bool == false) return tryAgain(retry);
+}
 
 
 function tryAgain(callback) {

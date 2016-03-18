@@ -45,7 +45,7 @@ function askUser() {
     ], function (choices) {
       console.log(choices);
 
-      // TODO resolve the promise !!!
+      // TODO
       // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
     });
   });
