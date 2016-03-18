@@ -46,6 +46,9 @@ function askUser() {
       console.log(choices);
 
       // TODO
+	fetchData(choices)
+	.then(function(param) {displayResults(param)})
+	.catch(err => console.err(err));
       // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
     });
   });
@@ -60,9 +63,16 @@ function fetchData(choices) {
   const spinner = ora('Fetching StarWars API...');
   spinner.start();
 
-  // TODO now use the fetch API :
+  // TODO
+  return fetch(url)
+     .then(function(response) {
+	if (response.ok) {
+	return Promise.resolve(response.json());
+	} else {
+	return Promise.reject("fetching error");
+	}
+   }).catch(err => Promise.reject(err));
   // https://developer.mozilla.org/fr/docs/Web/API/Fetch_API/Using_Fetch#Checking_that_the_fetch_was_successful
-  return Promise.reject(new Error('fetchData not implemented !'));
 }
 
 function displayResults(data) {
