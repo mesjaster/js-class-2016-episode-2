@@ -14,14 +14,24 @@ const router = module.exports = new express.Router();
 /////////////////////////////////////////////
 
 router.get('/', (req, res) => {
-	res.send('hello from API sub-router !');
+	res.send('My lord !');
   // TODO a small page listing your endpoints
+		
   // cf. js-class-2016-episode-2\src\server\common\meta-routes.js
 });
 
 
 
 // TODO one or two routes
+router.get('/stromtrooper', (req, res) => {
+	res.send('stormtrooper');
+});
+router.get('/hinhin', (req, res) => {
+	res.send('hinhin');
+});
+router.get('yo', (req, res) => {
+	res.send('yo');
+});
 // be creative !
 
 

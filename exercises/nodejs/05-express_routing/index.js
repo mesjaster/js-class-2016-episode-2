@@ -30,6 +30,8 @@ app.use((req, res, next) => {
 });
 
 app.get('/', function(req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   res.send('hello from app ! Try /meta /api');
 });
 
