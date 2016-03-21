@@ -78,25 +78,3 @@ function fetchData(choices) {
 function displayResults(data) {
   console.log('result :\n', prettyjson.render(data));
 }
-
-
-function getUrl () {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => resolve("http://swapi.co/people/3"), 1500)
-  })
-}
-
-getUrl()
-.then(function fetchData(url) {
-  return fetch(url)
-    .then(function onResponse(response) {
-      if(response.ok)
-        return response.json();
-      else
-        throw new Error('Network response was not ok.');
-    });
-})
-.then(function displayResults(data) {
-  console.log(data)
-})
-.catch(err => console.error(err));
